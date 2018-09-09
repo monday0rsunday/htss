@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Position</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.logo {
+			width: 80px;
+			height: 80px;
+			background-color: green;
+		}
+		.move {
+			top: 20px;
+			left: 20px;
+		}
+		.move2 {
+			top: 120px;
+			right: 120px;
+		}
+		.other {
+			background-color: red;
+		}
+		.rel {
+			position: relative;
+		}
+		.fix {
+			position: fixed;
+		}
+		.abs {
+			position: absolute;
+		}
+		.odd1 {
+			margin-left: 300px;
+		}
+		.odd2 {
+			margin-left: 600px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>Example 1. Relative position example</h1>
+		<p>Relative position will be relative to origin position. You can use other position attribute like
+		top/right/bottom/left</p>
+		<div class="logo">1</div>
+		<div class="logo other rel move">2-rel</div>
+		<div class="logo">3</div>
+	</section>
+	<hr>
+	<section class="odd1">
+		<h1>Example 2. Fix position example</h1>
+		<p>Fix position will be fixed to viewport, but from origin position. Fix position is out of flow, and it will overlap to element in flow. In following example you can't see element 2, which is hidden by element 1. 
+		However if you scroll, you can see element 1 fly over element 2.</p>
+		<textarea></textarea>
+		<div class="logo other fix">1-fix-ex2</div>
+		<div class="logo">2</div>
+		<div class="logo">3</div>
+	</section>
+	<hr>
+	<section class="odd2">
+		<h1>Example 3. Fix position example</h1>
+		<p>You can use possition attribute, but it will use viewport</p>
+		<textarea></textarea>
+		<div class="logo other fix move">1-fix-ex3</div>
+		<div class="logo">2</div>
+		<div class="logo">3</div>
+	</section>
+	<hr>
+	<section>
+		<h1>Example 4. Absolute position example</h1>
+		<p>Absolute position will absolute to first ancestor which haven't position=static. If there is no such ancestor, it will take html. If there is no top/left/right/bottom, then it use origin position</p>
+		<textarea></textarea>
+		<div class="logo other abs">1-abs-ex4</div>
+		<div class="logo">2</div>
+		<div class="logo">3</div>
+	</section>
+	<hr>
+	<section>
+		<h1>Example 5. Absolute position example</h1>
+		<p>Absolute position will absolute to first ancestor which haven't position=static. If there is no such ancestor, it will take html. If we use top/left/right/bottom, then it will be moved</p>
+		<textarea></textarea>
+		<div class="logo other abs move2">1-abs-ex5</div>
+		<div class="logo">2</div>
+		<div class="logo">3</div>
+	</section>
+	<hr>
+	<section class="rel">
+		<h1>Example 6. Absolute position example, which parent is rel</h1>
+		<p>Absolute position will absolute to first ancestor which haven't position=static. If there is no such ancestor, it will take html. If we use top/left/right/bottom, then it will be moved</p>
+		<textarea></textarea>
+		<div class="logo other abs move2">1-abs-ex6</div>
+		<div class="logo">2</div>
+		<div class="logo">3</div>
+	</section>
+</body>
+</html>
